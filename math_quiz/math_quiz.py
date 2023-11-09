@@ -1,6 +1,5 @@
 import random
 
-
 def randomIntegerGenerator(min, max):
     """
     This function returns a random integer within the min and max range,
@@ -12,14 +11,18 @@ def randomIntegerGenerator(min, max):
     Returns:
         int: A random integer between the min and max.
     """
+    
+    # trying to convert the input operands to ints if not possible
+    # query user for new inputs
     try:
-        # attempting to generate a random number assuming the numbers are integers
-        return random.randint(int(min), int(max))
+        min = int(min)
+        max = int(max)
     except ValueError:
         print("Invalid input! Please enter valid integer values.")
-        new_min = input("Enter the minimum range: ")
-        new_max = input("Enter the maximum range: ")
-        return randomIntegerGenerator(new_min, new_max)
+        min = int(input("Enter the minimum range: "))
+        max = int(input("Enter the maximum range: "))
+        
+    return random.randint(min, max)
 
 def randomOperationSelector():
     """
@@ -47,12 +50,25 @@ def performMathOperation(n1, n2, o):
         a (int/float): result of the operation on the operands.
     """
     
+    # trying to convert the input operands to floats if not possible
+    # query user for new inputs
+    try:
+        n1 = float(n1)
+        n2 = float(n2)
+    except ValueError:
+        print("Invalid input! Please enter valid integer/float values.")
+        n1 = float(input("Enter the first operand: "))
+        n2 = float(input("Enter the second operand: "))
+    
+    if o not in ['+', '-', '*']:
+        o = input("You can only choose o from '+', '-', '*', please choose properly: ")
+        
     # create a string for the opeartion to be carried out
     p = f"{n1} {o} {n2}"
     
     # carry out the operation o on the operands n1 and n2
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
+    if o == '-': a = n1 - n2
+    elif o == '+': a = n1 + n2
     else: a = n1 * n2
         
     return p, a
