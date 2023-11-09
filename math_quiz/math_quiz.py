@@ -26,7 +26,8 @@ def randomIntegerGenerator(min, max):
 
 def randomOperationSelector():
     """
-    This function randomly returns one of the mathematical operators out of: '+', '-', '*'
+    This function randomly returns one of the mathematical operators out 
+    of: '+', '-', '*'
     
     Returns:
         str: Randomly choosen mathematical operator
@@ -38,7 +39,8 @@ def randomOperationSelector():
 
 def performMathOperation(n1, n2, o):
     """
-    This function can be used to perform a mathematical operation ('+', '-', '*') on two numbers.
+    This function can be used to perform a mathematical operation 
+    ('+', '-', '*') on two numbers.
     
     Arg:
         n1 (int/float): The first operands,
@@ -61,7 +63,8 @@ def performMathOperation(n1, n2, o):
         n2 = float(input("Enter the second operand: "))
     
     if o not in ['+', '-', '*']:
-        o = input("You can only choose o from '+', '-', '*', please choose properly: ")
+        o = input("You can only choose o from '+', '-', '*', \
+                  please choose properly: ")
         
     # create a string for the opeartion to be carried out
     p = f"{n1} {o} {n2}"
@@ -82,7 +85,7 @@ def math_quiz():
         None
     """
     s = 0                                           # initialize the score variable
-    t_q = 3.14159265359
+    t_q = 10
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
